@@ -1,5 +1,7 @@
 # USS-receptor
 
+Firstly, clone this repo. Proceed to the steps below.
+
 ### STRING ###
 
 The STRING scripts are based on the STRING documentation (https://string-db.org/help/api/). First, run the STRING scripts as follow:
@@ -17,3 +19,11 @@ For the genome clustering and selection on fastANI results, run this:
 ```python reduce_genome_redundancy.py fastANI_output_whole_genomes.out 98```
 
 This reduces redundancy (many highly similar genomes) by using a graph-edge network method to select one representative genome from clusters of genomes that have >= 98% ANI.
+
+### USS counting ###
+
+To obtain the USS counts for selected Pasteurellaceae genomes, download the genomes from NCBI and place them in the current directory. Then run:
+
+``` ksh93 USS_counting.ksh ```
+
+This will generate a file USS_counts.txt that lists the genome, species name, USS dialect nucleotide sequence, USS dialect name, raw counts and the genome size (bp). A file USS_count_per_MB.txt will also be generated, which lists the genome, species name, USS dialect nucleotide sequence, USS dialect name and genome size corrected counts (per MB).
