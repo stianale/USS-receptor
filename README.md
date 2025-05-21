@@ -22,8 +22,8 @@ This reduces redundancy (many highly similar genomes) by using a graph-edge netw
 
 ### USS counting ###
 
-To obtain the USS counts for selected Pasteurellaceae genomes, download the genomes from NCBI and place them in the current directory. Then run:
+To obtain the USS counts for selected Pasteurellaceae genomes, download their FASTA nucleotide sequences from NCBI and place them in the current directory. Then run:
 
 ``` ksh93 USS_counting.ksh ```
 
-This will generate a file USS_counts.txt that lists the genome, species name, USS dialect nucleotide sequence, USS dialect name, raw counts and the genome size (bp). A file USS_count_per_MB.txt will also be generated, which lists the genome, species name, USS dialect nucleotide sequence, USS dialect name and genome size corrected counts (per MB).
+This will generate a file USS_counts.txt that lists the genome, species name, USS dialect nucleotide sequence, USS dialect name, raw counts and the genome size (bp). A file USS_count_per_MB.txt will also be generated, which lists the genome, species name, USS dialect nucleotide sequence, USS dialect name and genome size corrected counts (per MB). We provide two sample genome files (suffix "fna") for testing.
