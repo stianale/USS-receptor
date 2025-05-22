@@ -1,0 +1,27 @@
+{
+  "name": "USS_AAC22603.1_scrambled_11",
+  "modelSeeds": [707005809],
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "MENNKKQSFQDMLEYVHLYRLKNKLLRETADNDRKIRDNQKRILLLDNLNQYINDSMSVEEIRAIIASMREDYETRVDDYTIRNAELSQERRGIRQKMAEHAKKKTDY"
+      }
+    },
+    {
+      "dna": {
+        "id": "B",
+        "sequence": "CGTGAGAAC"
+      }
+    },
+    {
+      "dna": {
+        "id": "C",
+        "sequence": "GTTCTCACG"
+      }
+    }
+  ],
+  "bondedAtomPairs": [],
+  "dialect": "alphafold3",
+  "version": 1
+}

@@ -1,0 +1,27 @@
+{
+  "name": "USS_AAC22603.1_scrambled_10",
+  "modelSeeds": [410515514],
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "DTFQARQ"
+      }
+    },
+    {
+      "dna": {
+        "id": "B",
+        "sequence": "AGAGTGCAC"
+      }
+    },
+    {
+      "dna": {
+        "id": "C",
+        "sequence": "GTGCACTCT"
+      }
+    }
+  ],
+  "bondedAtomPairs": [],
+  "dialect": "alphafold3",
+  "version": 1
+}

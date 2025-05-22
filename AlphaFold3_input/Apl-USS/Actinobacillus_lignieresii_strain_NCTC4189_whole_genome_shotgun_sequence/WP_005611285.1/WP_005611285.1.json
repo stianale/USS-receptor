@@ -1,0 +1,27 @@
+{
+  "name": "USS_AAC22603.1",
+  "modelSeeds": [410374426, 86996184, 657506625, 968165783, 526809756, 368801494, 867049640, 472047015, 597385383, 855396477, 627854725, 320211626, 768445279, 375525718, 18944767, 943458415, 614149975, 714018218, 413462502, 61783491],
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "MTNLFDSLLPPFPWSFLFIQDLIGTIVFAVSGAIAARQHKMDIFGMFILAFVTGVGGGTLRDVMIGSTPVFWMKQPIYVLMITLAVIITAVFKNNFSKKEWQTGLLIFDAIGLGVFTVIGVQKGLDFGLHPLIAIALGGMTGCFGGVIRDILRNEVPIVLQKEVYVTASLIGGVIFVLFYSAGVESRWVDIATVVTVIVIRLLAIRFNLNLPRI"
+      }
+    },
+    {
+      "dna": {
+        "id": "B",
+        "sequence": "ACAAGCGGT"
+      }
+    },
+    {
+      "dna": {
+        "id": "C",
+        "sequence": "ACCGCTTGT"
+      }
+    }
+  ],
+  "bondedAtomPairs": [],
+  "dialect": "alphafold3",
+  "version": 1
+}

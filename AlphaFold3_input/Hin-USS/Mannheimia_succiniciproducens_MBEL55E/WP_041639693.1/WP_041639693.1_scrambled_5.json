@@ -1,0 +1,27 @@
+{
+  "name": "USS_AAC22603.1_scrambled_5",
+  "modelSeeds": [268833405],
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "YAKSD"
+      }
+    },
+    {
+      "dna": {
+        "id": "B",
+        "sequence": "GGATGATCG"
+      }
+    },
+    {
+      "dna": {
+        "id": "C",
+        "sequence": "CGATCATCC"
+      }
+    }
+  ],
+  "bondedAtomPairs": [],
+  "dialect": "alphafold3",
+  "version": 1
+}
