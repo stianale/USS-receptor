@@ -74,6 +74,8 @@ To generate an alignment of calculated eUSS for all genomes:
 
 For prediction of cellular location of all proteins to be modeled in AlphaFold3 downstream, install the command-line version of DeepTMHMM v. 1.0.24 following instructions here: https://dtu.biolib.com/DeepTMHMM. You will also need to generate a local BLAST database of the proteomes of the accessions in Genomes/OD_genomes.txt. For this, you have to install the BLAST+ command-line suite (https://www.ncbi.nlm.nih.gov/books/NBK569861/). Then:
 
+```mkdir Proteome_BLAST_db```
+
 ```cd Proteome_BLAST_db```
 
 ```datasets download genome accession --inputfile ../Genomes/OD_genomes.txt --include protein```
@@ -102,7 +104,11 @@ To run AlphaFold3 modeling, follow instructions here: https://github.com/google-
 
 We provide the input JSON configuration files that we used in the directory AlphaFold3_input/ in the format dialect/species/ncbi-accession/json-file. The native runs are named "accession.json", while the scrambled runs are named "accession_scrambled_seed#.json". Examples are AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1.json (this file specifies to run 20 replicate seeds) and AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1_scrambled_1.json. You can run modeling using AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1.json in the following way (using Docker):
 
-```docker run -i \
+```mkdir AlphaFold3_output```
+
+
+```
+docker run -i \
     --volume /AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/:/root/af_input \
     --volume /AlphaFold3_output/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/:/root/af_output \
     --volume /path/to/alphafold3_model_weights:/root/models \
