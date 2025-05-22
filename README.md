@@ -1,4 +1,4 @@
-# USS-receptor
+# Getting started
 
 Firstly, clone this repo. Install NCBI datasets following instructions here: https://github.com/ncbi/datasets. Then, move to the Genomes/ directory and download the genomes listed in genomes.txt
 
@@ -72,10 +72,26 @@ To generate an alignment of calculated eUSS for all genomes:
 
 ### DeepTMHMM ###
 
-For prediction of cellular location of all proteins to be modeled in AlphaFold3 downstream, install the command-line version of DeepTMHMM v. 1.0.24 following instructions here: https://dtu.biolib.com/DeepTMHMM. 
+For prediction of cellular location of all proteins to be modeled in AlphaFold3 downstream, install the command-line version of DeepTMHMM v. 1.0.24 following instructions here: https://dtu.biolib.com/DeepTMHMM. You will also need to generate a local BLAST database of the proteomes of the accessions in Genomes/OD_genomes.txt. For this, you have to install the BLAST+ command-line suite (https://www.ncbi.nlm.nih.gov/books/NBK569861/). Then:
+
+```cd Proteome_BLAST_db```
+
+```datasets download genome accession --inputfile ../Genomes/OD_genomes.txt --include protein```
+
+```unzip ncbi_dataset.zip```
+
+```rm -rf md5sum.txt ncbi_dataset.zip README.md```
+
+```find . -name "*.faa" -exec mv {} . \;```
+
+```rm -rf ncbi_dataset/```
+
+```cat *.faa >> Master_Past.faa```
+
+```makeblastdb -in Master_Past.faa -parse_seqids -blastdb_version 5 -taxid_map test_map.txt -title "Master_Past" -dbtype prot```
+
+```cd ..```
 
 ```cd DeepTMHMM```
 
 ```ksh93 DeepTMHMM_bulk_run.ksh```
-
-This script makes use of a local protein BLAST database located in /Proteome_Past_db that was compiled using makeblastdb v. 2.12.0+.
