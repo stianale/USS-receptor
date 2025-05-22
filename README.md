@@ -122,7 +122,7 @@ docker run -i \
     --output_dir=/root/af_output
 ```
 
-We also provide the script used to scramble the USS (AlphaFold3_input/scramble_dna_string.py), which can be run as:
+We also provide the script used to scramble the USS (AlphaFold3_input/scramble_dna_string.py), which can be run as follows:
 
 ```python scramble_dna_string.py AAGTGCGGT```
 
