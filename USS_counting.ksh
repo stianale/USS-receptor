@@ -4,7 +4,7 @@
 # We do not use the parameter -c for circular genomes, because  the 45 circular, complete genomes in the list do not have DUS occurrences overlapping in start and end coordinates.
 # Hence, using the parameter -c could only potentially yield wrong counts for the linear sequences in the contig/scaffold genomes.
 
-ls *.fna >> genomelist.txt
+ls Genomes/*.fna > genomelist.txt
 
 		for file in $(cat genomelist.txt);
 		do
