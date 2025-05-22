@@ -95,3 +95,32 @@ For prediction of cellular location of all proteins to be modeled in AlphaFold3 
 ```cd DeepTMHMM```
 
 ```ksh93 DeepTMHMM_bulk_run.ksh```
+
+### AlphaFold3 ###
+
+To run AlphaFold3 modeling, follow instructions here: https://github.com/google-deepmind/alphafold3. This includes obtaining a license to the AF3 model weights from Google.
+
+We provide the input JSON configuration files that we used in the directory AlphaFold3_input/ in the format dialect/species/ncbi-accession/json-file. The native runs are named "accession.json", while the scrambled runs are named "accession_scrambled_seed#.json". Examples are AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1.json (this file specifies to run 20 replicate seeds) and AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1_scrambled_1.json. You can run modeling using AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/WP_011199217.1.json in the following way (using Docker):
+
+```docker run -i \
+    --volume /AlphaFold3_input/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/:/root/af_input \
+    --volume /AlphaFold3_output/Hin-USS/Mannheimia_succiniciproducens_MBEL55E/WP_011199217.1/:/root/af_output \
+    --volume /path/to/alphafold3_model_weights:/root/models \
+    --volume /path/to/alphafold3_databases:/root/public_databases \
+    --gpus all \
+    alphafold3 \
+    python run_alphafold.py \
+    --input_dir=/root/af_input \
+    --model_dir=/root/models \
+    --db_dir=/root/public_databases \
+    --output_dir=/root/af_output
+```
+
+We also provide the script used to scramble the USS (AlphaFold3_input/scramble_dna_string.py), which can be run as:
+
+```python scramble_dna_string.py AAGTGCGGT```
+
+An example console output would be:
+
+"Original DNA: AAGTGCGGT
+Scrambled DNA: GGTGATGCA."
