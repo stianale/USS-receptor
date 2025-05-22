@@ -42,7 +42,7 @@ For the genome clustering and selection of genomes from fastANI results (you can
 
 ```cd ..```
 
-This reduces redundancy (many highly similar genomes) by using a graph-edge network method to select one representative genome from clusters of genomes that have >= 98% ANI.
+This reduces redundancy (many highly similar genomes) by using a graph-edge network method to select one representative genome from clusters of genomes that have >= 98% ANI. This may produce different results across separate runs. Our resulting genomes to keep are the genomes listed in Genomes/OD_genomes.txt.
 
 ### USS counting ###
 
@@ -69,3 +69,13 @@ To generate an alignment of calculated eUSS for all genomes:
 ```ksh93 seqkit.ksh```
 
 ```cd ..```
+
+### DeepTMHMM ###
+
+For prediction of cellular location of all proteins to be modeled in AlphaFold3 downstream, install the command-line version of DeepTMHMM v. 1.0.24 following instructions here: https://dtu.biolib.com/DeepTMHMM. 
+
+```cd DeepTMHMM```
+
+```ksh93 DeepTMHMM_bulk_run.ksh```
+
+This script makes use of a local protein BLAST database located in /Proteome_Past_db that was compiled using makeblastdb v. 2.12.0+.
