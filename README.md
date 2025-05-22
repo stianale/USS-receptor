@@ -67,4 +67,5 @@ To generate an alignment of calculated eUSS for all genomes:
 ```Rscript get_majority_vote.R```
 
 ```ksh93 seqkit.ksh```
+
 ```cd ..```
