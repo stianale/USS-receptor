@@ -98,6 +98,8 @@ For prediction of cellular location of all proteins to be modeled in AlphaFold3 
 
 ```ksh93 DeepTMHMM_bulk_run.ksh```
 
+```cd ..```
+
 ### AlphaFold3 ###
 
 To run AlphaFold3 modeling, follow instructions here: https://github.com/google-deepmind/alphafold3. This includes obtaining a license to the AF3 model weights from Google.
@@ -130,3 +132,5 @@ An example console output would be:
 
 "Original DNA: AAGTGCGGT
 Scrambled DNA: GGTGATGCA."
+
+You can use the scripts calculate_cppm_iptm_pae_plddt_uss.ksh and calculate_cppm_iptm_pae_plddt_euss.ksh to calculate ipTM, CPPM, PAE and pLDDT for all output models.
