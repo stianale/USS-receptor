@@ -58,7 +58,7 @@ This will generate a file USS_counts.txt that lists the genome, species name, US
 
 ### eUSS ###
 
-To generate an alignment of calculated eUSS for all genomes:
+To generate an alignment of calculated eUSS for all genomes, download and install SeqKit (https://bioinf.shenwei.me/seqkit/download/).
 
 ```cd eUSS```
 
@@ -134,3 +134,14 @@ An example console output would be:
 Scrambled DNA: GGTGATGCA."
 
 You can use the scripts calculate_cppm_iptm_pae_plddt_uss.ksh and calculate_cppm_iptm_pae_plddt_euss.ksh to calculate ipTM, CPPM, PAE and pLDDT for all output models.
+
+### DockQ ###
+
+To calculate species-wise DockQ across all top models from AF3, install DockQ (github.com/bjornwallner/DockQ). Then, list the full path of your top models (ipTM >= 0.6) into files named <species>_9_mer_ipTM_0_6_or_above.txt, ie. "Pasteurella_multocida_strain_NCTC8282_chromosome_1_9_mer_ipTM_0_6_or_above.txt", and place these files in their respective species directories in DockQ/. Then, inside each species directory run the script DockQ_script_new.bash followed by the cluster.py script.
+
+```cd DockQ
+```bash DockQ_script_new.bash```
+```python cluster.py```
+```wc -l cluster*txt```
+
+The last command will show which is the largest cluster. You may align these models in PyMOL.
