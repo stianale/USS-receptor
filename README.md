@@ -135,6 +135,8 @@ Scrambled DNA: GGTGATGCA."
 
 You can use the scripts calculate_cppm_iptm_pae_plddt_uss.ksh and calculate_cppm_iptm_pae_plddt_euss.ksh to calculate ipTM, CPPM, PAE and pLDDT for all output models.
 
+The file af3_list.txt lists all orthologs in all species and which USS-dialect they were modeled in complex with in AF3.
+
 ### DockQ ###
 
 To calculate species-wise DockQ across all top models from AF3, install DockQ (github.com/bjornwallner/DockQ). Then, list the full path of your top models (ipTM >= 0.6) into files named <species>_9_mer_ipTM_0_6_or_above.txt, ie. "Pasteurella_multocida_strain_NCTC8282_chromosome_1_9_mer_ipTM_0_6_or_above.txt", and place these files in their respective species directories in DockQ/. Then, inside each species directory run the script DockQ_script_new.bash followed by the cluster.py script.
