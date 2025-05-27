@@ -1,22 +1,32 @@
 # Getting started
 
-Firstly, clone this repo. Install NCBI datasets following instructions here: https://github.com/ncbi/datasets. Then, move to the Genomes/ directory and download the genomes listed in genomes.txt
+Firstly, clone this repo. Install NCBI datasets following instructions here: https://github.com/ncbi/datasets. Then, move to the Genomes/ directory and download FASTA genomes, proteomes and GFFs for the NCBI accessions listed in genomes.txt
 
 ```cd Genomes```
 
-```datasets download genome accession --inputfile genomes.txt --include genome```
+```datasets download genome accession --inputfile genomes.txt --include genome protein gff3```
 
 ```unzip ncbi_dataset.zip```
 
 ```rm -rf md5sum.txt ncbi_dataset.zip README.md```
 
-```find . -name "*.fna" -exec mv {} . \;```
+```find . \( -name "*.fna" -o -name "*.faa" -o -name "*.gff" \) -exec mv {} . \;```
 
 ```rm -rf ncbi_dataset/```
 
 ```cd ..```
 
 Proceed to the steps below.
+
+### eggNOG ###
+
+Install eggNOG and set up databases as instructed here: https://github.com/eggnogdb/eggnog-mapper/wiki/eggNOG-mapper-v2.1.5-to-v2.1.12#user-content-Installation. Download the Diamond database for Bacteria.
+
+You can run eggNOG on Haemophilus influenzae Rd using our parameters as follows:
+
+```cd eggNOG```
+
+```emapper.py --data_dir /path/to/eggnog_databases/ -m diamond --dmnd_db /path/to/diamond_bacteria.dmnd --itype proteins -i ../Genomes/GCA_000027305.1_ASM2730v1_genomic.faa --cpu 0 --output_dir . --output GCA_000027305.1_ASM2730v1_genomic --tax_scope Gammaproteobacteria --tax_scope_mode Bacteria --decorate_gff GCA_000027305.1_ASM2730v1_genomic.gff --go_evidence all```
 
 ### STRING ###
 
@@ -43,6 +53,14 @@ For the genome clustering and selection of genomes from fastANI results (you can
 ```cd ..```
 
 This reduces redundancy (many highly similar genomes) by using a graph-edge network method to select one representative genome from clusters of genomes that have >= 98% ANI. This may produce different results across separate runs. Our resulting genomes to keep are the genomes listed in Genomes/OD_genomes.txt.
+
+### OrthoFinder ###
+
+Install OrthoFinder as instructed here: 
+
+Run OrthoFinder on the proteomes in Genomes (you should now have downloaded the proteomes for the accession listed in Genomes/OD_genomes.txt and placed them here).
+
+```orthofinder -f Genomes/ -M msa -S diamond -a 16```
 
 ### USS counting ###
 
@@ -156,6 +174,12 @@ The last command will show which is the largest cluster. You may align these mod
 
 To run Cramer's V (CV) coevolution analysis, run the Python script in Coevolution/Cramer_V:
 
+```cd Coevolution/Cramer_V```
+
 ```python caps_Cramers_V_bonferroni.py```
 
+```cd ../..```
+
 This will generate output files with suffix "_coevo_Cramers_V_bonferroni_results.txt" for pairs of orthogroup alignments and alignment of extended USS (eUSS) from the genomes represented in the orthogroup. The output lists USS position, protein position, CV's and p-value (Bonferroni corrected) for the CV's.
+
+To run miBio coevolution analysis, download miBIO (https://www.bioinformatics.org/aces/miBio.html). Go to Coevolution/miBIO, launch miBio and submit jobs for all pairwise orthogroup and eUSS FASTA files, using the amino acid grouping "M, C, V, I, A, L, DE, KR, H, F, W, Y, T, S, NQ, P, G, -X" and full configurations shown in Coevolution/miBio/config.png for the example orthogrup OG0000964 (PpdA).
