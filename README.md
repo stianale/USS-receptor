@@ -150,3 +150,12 @@ To calculate species-wise DockQ across all top models from AF3, install DockQ (g
 ```wc -l cluster*txt```
 
 The last command will show which is the largest cluster. You may align these models in PyMOL.
+
+
+### Coevolution ###
+
+To run Cramer's V (CV) coevolution analysis, run the Python script in Coevolution/Cramer_V:
+
+```python caps_Cramers_V_bonferroni.py```
+
+This will generate output files with suffix "_coevo_Cramers_V_bonferroni_results.txt" for pairs of orthogroup alignments and alignment of extended USS (eUSS) from the genomes represented in the orthogroup. The output lists USS position, protein position, CV's and p-value (Bonferroni corrected) for the CV's.
