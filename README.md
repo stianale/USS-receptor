@@ -151,9 +151,9 @@ An example console output would be:
 "Original DNA: AAGTGCGGT
 Scrambled DNA: GGTGATGCA."
 
-You can use the scripts calculate_cppm_iptm_pae_plddt_uss.ksh and calculate_cppm_iptm_pae_plddt_euss.ksh to calculate ipTM, CPPM, PAE and pLDDT for all output models.
+You can use the script AlphaFold3_input/calculate_cppm_iptm_pae_plddt_uss.ksh to calculate ipTM, CPPM, PAE and pLDDT for all output models. The script AlphaFold3_input/make_pae_plot.py can be used to generate PAE plots for output models.
 
-The file af3_list.txt lists all orthologs in all species and which USS-dialect they were modeled in complex with in AF3.
+The file AlphaFold3_input/af3_list.txt lists all orthologs in all species and which USS-dialect they were modeled in complex with in AF3.
 
 ### DockQ ###
 
