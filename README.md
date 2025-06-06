@@ -169,6 +169,9 @@ To calculate species-wise DockQ across all top models from AF3, install DockQ (g
 
 The last command will show which is the largest cluster. You may align these models in PyMOL.
 
+### DeepPBS ###
+
+To run DeepPBS on AF3 outputs follow instructions here: https://github.com/timkartar/DeepPBS. The part "Compute and Visualize perturbation based heavy atom interpretability" is not necessary to run.
 
 ### Coevolution ###
 
