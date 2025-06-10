@@ -175,7 +175,7 @@ To run DeepPBS on AF3 outputs follow instructions here: https://github.com/timka
 
 ### Coevolution ###
 
-To run Cramer's V (Φc) coevolution analysis, run the Python script in Coevolution/Cramer_V:
+To run Cramér's V (Φc) coevolution analysis, run the Python script in Coevolution/Cramer_V:
 
 ```cd Coevolution/Cramer_V```
 
