@@ -175,7 +175,7 @@ To run DeepPBS on AF3 outputs follow instructions here: https://github.com/timka
 
 ### Coevolution ###
 
-To run Cramer's V (CV) coevolution analysis, run the Python script in Coevolution/Cramer_V:
+To run Cramer's V (Φc) coevolution analysis, run the Python script in Coevolution/Cramer_V:
 
 ```cd Coevolution/Cramer_V```
 
@@ -183,6 +183,6 @@ To run Cramer's V (CV) coevolution analysis, run the Python script in Coevolutio
 
 ```cd ../..```
 
-This will generate output files with suffix "_coevo_Cramers_V_bonferroni_results.txt" for pairs of orthogroup alignments and alignment of extended USS (eUSS) from the genomes represented in the orthogroup. The output lists USS position, protein position, CV's and p-value (Bonferroni corrected) for the CV's.
+This will generate output files with suffix "_coevo_Cramers_V_bonferroni_results.txt" for pairs of orthogroup alignments and alignment of extended USS (eUSS) from the genomes represented in the orthogroup. The output lists USS position and aligned protein position starting from 0, Φc and p-value (Bonferroni corrected) for the Φc values.
 
 To run miBio coevolution analysis, download miBIO (https://www.bioinformatics.org/aces/miBio.html). Go to Coevolution/miBIO, launch miBio and submit jobs for all pairwise orthogroup and eUSS FASTA files, using the amino acid grouping "M, C, V, I, A, L, DE, KR, H, F, W, Y, T, S, NQ, P, G, -X" and full configurations shown in Coevolution/miBio/config.png for the example orthogrup OG0000964 (PpdA).
