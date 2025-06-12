@@ -185,4 +185,8 @@ To run Cramér's V (Φc) coevolution analysis, run the Python script in Coevolut
 
 This will generate output files with suffix "_coevo_Cramers_V_bonferroni_results.txt" for pairs of orthogroup alignments and alignment of extended USS (eUSS) from the genomes represented in the orthogroup. The output lists USS position and aligned protein position starting from 0, Φc and p-value (Bonferroni corrected) for the Φc values.
 
-To run miBio coevolution analysis, download miBIO (https://www.bioinformatics.org/aces/miBio.html). Go to Coevolution/miBIO, launch miBio and submit jobs for all pairwise orthogroup and eUSS FASTA files, using the amino acid grouping "M, C, V, I, A, L, DE, KR, H, F, W, Y, T, S, NQ, P, G, -X" and full configurations shown in Coevolution/miBio/config.png for the example orthogrup OG0000964 (PpdA).
+To run miBio coevolution analysis, download miBIO (https://www.bioinformatics.org/aces/miBio.html). Go to Coevolution/miBIO, launch miBio using the following command (make sure the installed jar file is named "mutualInfoBio_2.jar" and is in path:
+
+```java --module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml -jar mutualInfoBio_2.jar```
+
+Then submit jobs for all pairwise orthogroup and eUSS FASTA files, using the amino acid grouping "M, C, V, I, A, L, DE, KR, H, F, W, Y, T, S, NQ, P, G, -X" and full configurations shown in Coevolution/miBio/config.png for the example orthogrup OG0000964 (ComN/PpdA).
